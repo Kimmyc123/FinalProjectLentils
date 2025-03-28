@@ -24,6 +24,7 @@
                 <a href="#nutrition" class="nav-link hover:text-green-300">Nutrition</a>
                 <a href="#epigenetics" class="nav-link hover:text-green-200">Epigenetics</a>
                 <a href="#quiz" class="nav-link hover:text-green-200">Quiz</a>
+                <a href="#abouttheauthor" class="nav-link hover:text-green-300">Author</a>
             </div>
         </div>
     </nav>
@@ -83,9 +84,37 @@
                 <a href="#science" class="nav-link hover:text-green-200">Science</a>
                 <a href="#refrences" class="nav-link hover:text-green-200">References</a>
                 <a href="#quiz" class="nav-link hover:text-green-200">Quiz</a>
+                <a href="#abouttheauthor" class="nav-link hover:text-green-200">AboutThe Author</a>
             </div>
         </div>
     </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('nav a');
+            
+            // Add click event listeners to each link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // Hide all pages
+                    document.querySelectorAll('.page').forEach(page => {
+                        page.style.display = 'none';
+                    });
+                    
+                    // Show the target page
+                    document.getElementById(targetId).style.display = 'block';
+                });
+            });
+            
+            // Show the first page by default
+            document.querySelector('.page').style.display = 'block';
+        });
+    </script>
+
 </body>
 
   
@@ -891,3 +920,957 @@ functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition
         });
     });
 </script>
+
+<!-- About the Author Section -->
+<div id="abouttheauthor" class="page pt-20" style="font-family: Arial, sans-serif;">
+  <div class="container mx-auto px-4 py-12">
+    <div class="bg-white shadow-2xl rounded-xl p-8">
+      <h2 class="text-4xl font-bold mb-6 text-green-700">About the Author</h2>
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 mb-6 md:mb-0 md:mr-8 flex items-center justify-center overflow-hidden rounded-full border-4 border-green-500">
+          <!-- Placeholder image related to veganism -->
+          <img src="https://media.licdn.com/dms/image/v2/D4E03AQHYaQYqJsjNVw/profile-displayphoto-shrink_800_800/B4EZWOyCoOHMAc-/0/1741857237948?e=1748476800&v=beta&t=QKZM_cTgIPMPjxKIGE45HMp67RMbgnbv3qyFl4PFf0g"   
+         alt="Research and Science"   
+         class="rounded-xl shadow-lg w-1/2 ml-15"> 
+         
+        </div>
+        <div class="text-gray-700 leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-2">Kimberly Ceus</h3>
+          <p class="mb-4">I'm a dedicated researcher in Nutritional Sciences with a specialization in clinical research and dietary interventions for chronic kidney disease (CKD). Her expertise lies at the intersection of metabolic research, molecular nutrition, and patient-centered approaches to improving health outcomes. Kimberly has a solid track record of conducting clinical trials, developing nutritional intervention protocols, and working directly with hemodialysis patients to integrate exercise and dietary strategies into their care. Her passion is in translating scientific discoveries into actionable health solutions, bridging the gap between research and real-world impact. Through her work, Kimberly strives to advance nutritional therapies and improve quality of life for individuals with chronic health conditions.</p>
+          <p class="mb-4">As an incoming Ph.D. student in Nutritional Sciences at the University of Arizona, I bring both academic rigor and hands-on research experience to my work.</p>
+          <p class="mb-4">As a Haitian American student and researcher, I'm passionate about exploring the intersection of nutrition, culture, and health. When Im not conducting research or writing, you’ll find me experimenting with new vegan recipes in my kitchen, immersed in a good book, or staying active at the gym.</p>
+          <div class="flex space-x-4 mt-4">
+            
+          <a href="https://www.linkedin.com/in/kimberlya-ceus/" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:text-green-800">    
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">    
+    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>    
+  </svg>    
+</a>  
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <meta charset="UTF-8">
+    <title>Lentil Soup: A Nutritional Exploration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Smooth scrolling and page transitions */
+        html { scroll-behavior: smooth; }
+        .page { 
+            min-height: 100vh; 
+            display: none; 
+        }
+        .page.active { display: block; } 
+    </style>
+</head>
+<body class="bg-gradient-to-br from-brown-400 to-red-500 via-orange-400 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-green-600 text-white p-4 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-1xl font-bold">TheChronicles of Lentil Soup Nutrition</h1>
+            <div class="space-x-4">
+                <a href="#home" class="nav-link hover:text-green-200">Home</a> <a href="about.html" class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">About</a>  
+                <a href="#nutrition" class="nav-link hover:text-green-300">Nutrition</a>
+                <a href="#epigenetics" class="nav-link hover:text-green-200">Epigenetics</a>
+                <a href="#quiz" class="nav-link hover:text-green-200">Quiz</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active pt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="bg-white shadow-2xl rounded-xl p-8 text-center">
+                <h1 class="text-5xl font-bold mb-4 text-green-700">Lentil Soup: A Culinary Adventure</h1>
+               <img src="https://www.cookingclassy.com/wp-content/uploads/2017/01/lentil-soup-2.jpg"   
+     alt="Multifaceted-Lentil Soup"   
+     class="mx-auto mb-6 rounded-xl shadow-lg w-96">  
+<img src="https://peasandcrayons.com/wp-content/uploads/2015/02/madras-lentil-soup-recipe-2.jpg"   
+     alt="Madras Lentil Soup"   
+     class="mx-auto mb-6 rounded-xl shadow-lg w-96">  
+<img src="https://jessicainthekitchen.com/wp-content/uploads/2022/01/Lentil-Soup-10.jpg"   
+     alt="Hearty Lentil Soup"   
+     class="mx-auto mb-6 rounded-xl shadow-lg w-96">  
+<p class="text-xl text-gray-700 mb-6">  
+<p class="text-xl text-gray-700 mb-6"> 
+                    A Journey Through Nutrition, Sustainability, and Health
+                </p>
+            <a href="#nutrition" class="nav-link bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">Explore the Nutrition</a>   
+            </div>
+        </div>
+    </div>
+    <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Lentil Soup: A Nutritional Exploration</title>  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+    <style>  
+        /* Smooth scrolling and page transitions */  
+        html { scroll-behavior: smooth; }  
+        .page {   
+            min-height: 100vh;   
+            display: none;   
+        }  
+        .page.active { display: block; }  
+    </style>  
+</head>  
+
+<body class="bg-gradient-to-br from-brown-400 to-red-500 via-orange-400 font-sans">  
+    <!-- Navigation Banner -->  
+    <nav class="fixed top-0 w-full bg-black text-white p-4 z-50">  
+        <div class="container mx-auto flex flex-col items-center">  
+            <div class="text-center">
+                <h1 class="text-3xl font-bold">The Chronicles of Lentil Soup</h1>
+                <p class="text-sm italic text-pink-800">By: Kimberly Ceus</p>
+            </div>
+            <div class="flex space-x-8 mt-4">
+                <a href="#home" class="nav-link hover:text-green-200">Home</a>
+                <a href="#about" class="nav-link hover:text-green-200">About</a>
+                <a href="#nutrition" class="nav-link hover:text-green-300">Nutrition</a>
+                <a href="#epigenetics" class="nav-link hover:text-green-200">Epigenetics</a>
+                <a href="#science" class="nav-link hover:text-green-200">Science</a>
+                <a href="#refrences" class="nav-link hover:text-green-200">References</a>
+                <a href="#quiz" class="nav-link hover:text-green-200">Quiz</a>
+                <a href="#abouttheauthor" class="nav-link hover:text-green-200">About The Author</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('nav a');
+            
+            // Add click event listeners to each link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // Hide all pages
+                    document.querySelectorAll('.page').forEach(page => {
+                        page.style.display = 'none';
+                    });
+                    
+                    // Show the target page
+                    document.getElementById(targetId).style.display = 'block';
+                });
+            });
+            
+            // Show the first page by default
+            document.querySelector('.page').style.display = 'block';
+        });
+    </script>
+
+</body>
+
+  
+</div>
+
+</div>
+   <!-- About Page -->  
+    <div id="about" class="page pt-20">  
+        <div class="container mx-auto px-4 py-12">  
+            <div class="bg-white shadow-2xl rounded-xl p-8">  
+                <h2 class="text-4xl font-bold mb-6 text-green-700">Discover Lentil Soup</h2>  
+                <div class="grid md:grid-cols-2 gap-8">  
+                    <div>  
+                        <img src="https://www.cookingclassy.com/wp-content/uploads/2017/01/lentil-soup-2.jpg" alt="Lentil Soup" class="rounded-xl mb-4">  
+                        <h3 class="text-2xl font-semibold mb-4">A Delicious & Comforting Meal</h3>  
+                        <p class="mb-4">  
+                            Discover a delightful and hearty lentil soup crafted with a blend of fresh vegetables including carrots, onions, celery, and garlic. The aromatic spices—cumin, coriander, and turmeric—enhance the flavors, while a handful of fresh spinach is added at the end to infuse additional nutrients.  
+                        </p>  
+                        <p>  
+                            This comforting meal is perfect for dining during the cooler months, offering warmth and nourishment in every spoonful.  
+                        </p>  
+                    </div>  
+                    <div>  
+                        <img src="https://peasandcrayons.com/wp-content/uploads/2015/02/madras-lentil-soup-recipe-2.jpg" alt="Lentil Soup Serving" class="rounded-xl mb-4">  
+                        <h3 class="text-2xl font-semibold mb-4">Why This Meal Matters</h3>  
+                        <p class="mb-4">  
+                            This lentil soup is more than just a meal—it's a treasure trove of memories and traditions. Reminiscent of family gatherings and cherished moments at home, the soup embodies comfort and simplicity.  
+                        </p>  
+                        <p>  
+                            Embracing a vegan lifestyle has further spotlighted its significance, proving that delicious, wholesome, and easy-to-make dishes can ignite both excitement and satisfaction.  
+                        </p>  
+                    </div>  
+                </div>  
+                  
+                
+                <h3 class="text-2xl font-semibold mt-8 mb-4">Metabolism and Health: The Science Behind Lentil Soup</h3>
+                <div class="mb-6">
+                    <h4 class="text-xl font-semibold mb-3">How Are Macronutrients Metabolized After Eating Lentil Soup?</h4>
+                    <p class="mb-4">
+                        Lentil soup contains all three macronutrients—carbohydrates, proteins, and fats—which are metabolized through distinct but interconnected pathways:
+                    </p>
+                    <ul class="mb-4 space-y-2">
+                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+                            <span><strong>Carbohydrates:</strong> Lentils and vegetables provide complex carbohydrates, which are broken down into glucose and metabolized via glycolysis, followed by the TCA cycle and oxidative phosphorylation for ATP production. Excess glucose may be stored as glycogen through glycogenesis.</span>
+                        </li>
+                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+                            <span><strong>Proteins:</strong> The lentils contribute plant-based protein, which is digested into amino acids. These amino acids enter the amino acid catabolism pathways, where they can be used for energy, neurotransmitter synthesis, or gluconeogenesis if needed.</span>
+                        </li>
+                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+                            <span><strong>Fats:</strong> Olive oil provides healthy monounsaturated fats that are broken down through beta-oxidation, generating acetyl-CoA for the TCA cycle and ATP production.</span>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Pathway Regulation & Enzymatic Activity</h4>
+                    <p class="mb-4">
+                        After consuming lentil soup, insulin signaling increases, upregulating glycolysis and glycogenesis, while downregulating gluconeogenesis.
+                    </p>
+                    <p class="mb-2"><strong>Key enzymes activated:</strong> Glucokinase (for glucose metabolism), ATP synthase (for energy production), and acetyl-CoA carboxylase (for fat metabolism).</p>
+                    <p class="mb-4"><strong>Key enzymes repressed:</strong> Glucose-6-phosphatase (to reduce gluconeogenesis).</p>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Lentil Soup & Its Impact on Health</h4>
+                    <ul class="mb-4 space-y-2">
+                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+                            <span><strong>Inflammation:</strong> Lentil soup is rich in antioxidants and polyphenols from lentils, vegetables, and spices, which may reduce inflammation by modulating cytokine activity.</span>
+                        </li>
+                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+                            <span><strong>Gene Transcription:</strong> The fiber and phytochemicals in lentils may upregulate genes associated with anti-inflammatory responses and downregulate genes linked to oxidative stress.</span>
+                        </li>
+                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+                            <span><strong>Epigenetic Effects:</strong> The presence of bioactive compounds (like polyphenols and folate) can influence DNA methylation and histone modifications, potentially reducing the risk of chronic diseases.</span>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Is Lentil Soup a Healthy Everyday Meal?</h4>
+                    <p class="mb-4">
+                        Yes! Lentil soup is nutrient-dense, providing protein, fiber, vitamins, and minerals while being low in saturated fat and refined sugars. Regular consumption supports heart health, gut microbiota diversity, and stable blood sugar levels.
+                    </p>
+                    <p class="mb-4">
+                        However, dietary variety is key—pairing lentil soup with other plant-based protein sources ensures a well-rounded amino acid profile.
+                    </p>
+                    
+                    <h4 class="text-xl font-semibold mb-3">Metabolism of Lentil Soup in Disease States</h4>
+                    <ul class="mb-4 space-y-2">
+                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+                            <span><strong>Cancer:</strong> Some cancer cells rely heavily on glycolysis (Warburg effect) rather than oxidative phosphorylation. The fiber and antioxidants in lentil soup may help by modulating metabolic pathways that inhibit tumor progression.</span>
+                        </li>
+                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+                            <span><strong>Diabetes:</strong> Lentil soup has a low glycemic index, meaning it releases glucose slowly, reducing blood sugar spikes. However, in diabetic individuals, insulin sensitivity is reduced, leading to alterations in glucose uptake and metabolism.</span>
+                        </li>
+                    </ul>
+                </div>
+<h3 class="text-2xl font-semibold mt-8 mb-4">Ingredients</h3>  
+                <ul class="grid md:grid-cols-2 gap-2">  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>1 cup dried green or brown lentils</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>1 medium onion, diced</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>2 carrots, diced</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>2 celery stalks, diced</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>3 cloves garlic, minced</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>1 tablespoon olive oil</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>1 teaspoon ground cumin</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>1 teaspoon ground coriander</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>1/2 teaspoon ground turmeric</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>4 cups vegetable broth</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>2 cups water</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>Salt and pepper to taste</li>  
+                    <li class="flex items-center"><span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span>2 cups fresh spinach (optional)</li>  
+                </ul>  
+            </div>  
+        </div>  
+    </div>  
+<!-- Science Section -->
+<div id="science" class="page pt-20">
+    <div class="container mx-auto px-4 py-12">
+        <div class="bg-white shadow-2xl rounded-xl p-8">
+            <h2 class="text-4xl font-bold mb-6 text-green-700">The Science Behind Lentil Soup</h2>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-4">Every claim made is backed by scientific research. Explore more sources below!</p>
+                <div class="flex justify-center mb-6">  
+    <img src="https://files.oaiusercontent.com/file-Se8jyLTFm6ofcwCpakV5rc?se=2025-03-27T19%3A20%3A09Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Da8ea89c6-15f1-4932-a5da-8e225f6d8018.webp&sig=CnYC6mOcTzq0OKd2JDpz7BWo7BNoGA4t4I2z3SWFDUE%3D"   
+         alt="Research and Science"   
+         class="rounded-xl shadow-lg w-1/2 mr-2">  
+    <img src="https://image.lexica.art/md2_webp/e0d1263f-3c39-4641-bc2e-891cc32d3728"   
+         alt="Research and Science"   
+         class="rounded-xl shadow-lg w-1/2 ml-2">  
+</div>  
+            </div>
+            
+            
+            <!-- Detailed Analysis Section (from paste.txt) -->
+            <div class="mb-10 bg-green-50 p-6 rounded-xl shadow-md">
+                <h3 class="text-2xl font-semibold mb-4 text-green-700">Detailed Nutritional & Epigenetic Analysis</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-bold text-xl mb-2">GMO Status</h4>
+                        <p class="mb-2">Are there any components of your meal that may include a genetically modified food (GMO)?</p>
+                        <p>No, none of the ingredients in this meal are genetically modified. According to the USDA's Bioengineered Food List, common GMO foods include soy, corn, canola, and certain squashes. Since this meal consists of lentils, vegetables, and spices, none of the components are bioengineered or commonly genetically modified.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-xl mb-2">Epigenetic Effects</h4>
+                        <p class="mb-2">What components of your meal may alter your epigenome?</p>
+                        <p class="font-semibold mt-2">Carbon-donating nutrients (Methylation Supporters)</p>
+                        <ul class="list-disc pl-6 mb-2">
+                            <li>Lentils and spinach are rich in folate (vitamin B9), which is a key methyl donor in DNA methylation.</li>
+                            <li>Garlic and onions contain choline, which also contributes to methylation and can support proper gene regulation.</li>
+                        </ul>
+                        
+                        <p class="font-semibold mt-2">Histone Deacetylase (HDAC) Inhibitors (Help keep genes active)</p>
+                        <ul class="list-disc pl-6">
+                            <li>Turmeric (curcumin) is a known HDAC inhibitor, meaning it can help turn on beneficial genes involved in inflammation reduction and disease prevention.</li>
+                            <li>Garlic contains sulfur compounds that may have epigenetic effects, influencing detoxification pathways and immune function.</li>
+                            <li>Spinach and carrots are high in polyphenols and flavonoids, which have been linked to epigenetic modifications that promote health.</li>
+                        </ul>
+                        
+                        <p class="mt-2">This meal supports healthy epigenetic regulation through methylation and HDAC inhibition, which may positively influence gene expression related to inflammation, metabolism, and detoxification.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-xl mb-2">Protein Content</h4>
+                        <p class="mb-2">What are the sources of protein in your meal? Would you consider this meal high in protein and why or why not?</p>
+                        <ul class="list-disc pl-6 mb-2">
+                            <li>The primary protein source in this meal is lentils, which provide 18g of protein per cup.</li>
+                            <li>Spinach also contributes a small amount of protein (0.9g per cup).</li>
+                        </ul>
+                        <p>I would consider that this meal is relatively high in protein, especially for a plant-based meal, since it provides around 20g of protein per serving, which is 40% of the recommended daily intake (RDI) for protein.</p>
+                        
+                        <p class="font-semibold mt-2">Why is it high in protein?</p>
+                        <ul class="list-disc pl-6">
+                            <li>It provides a complete range of essential amino acids when combined with other plant foods throughout the day.</li>
+                            <li>Lentils are a dense source of plant protein and fiber.</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-xl mb-2">Amino Acid Processing</h4>
+                        <p class="mb-2">If you eat more amino acids than your body is going to use, what happens to them?</p>
+                        <p>When the body has excess amino acids, it cannot store them like fats or carbohydrates.</p>
+                        <ol class="list-decimal pl-6 mb-2">
+                            <li>Deamination: The body removes the amino group (NH₂) from excess amino acids.</li>
+                            <li>Urea Cycle: The amino group is converted into urea in the liver and excreted through the urine.</li>
+                            <li>Energy Production: The remaining carbon skeleton is used for glucose (gluconeogenesis) or stored as fat if not immediately needed.</li>
+                        </ol>
+                        <p>Excess protein does not get stored as protein; it's either used for energy or converted into fat if intake exceeds energy demands.</p>
+                        
+                        <p class="mb-2 mt-4">If your body needs a specific non-essential amino acid (say alanine, for example), but your meal doesn't include it, how can your body create this amino acid?</p>
+                        <p>The body can synthesize non-essential amino acids through transamination, which involves...</p>
+                        <ol class="list-decimal pl-6">
+                            <li>Using an existing amino acid: The body transfers an amino group from one amino acid (e.g., glutamate) to a keto acid (e.g., pyruvate).</li>
+                            <li>Creating the needed amino acid: This reaction produces the non-essential amino acid, such as alanine from pyruvate.</li>
+                        </ol>
+                        <p class="mt-2">From what I understand, as long as the body has enough nitrogen and precursor molecules, it can synthesize most non-essential amino acids, making dietary intake of these specific amino acids unnecessary.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-4">
+                <!-- Reference Cards -->
+                
+                <div class="reference-card bg-green-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-2">U.S. Department of Agriculture</h3>
+                            <p class="mb-2">Bioengineered foods list. U.S. Department of Agriculture, Agricultural Marketing Service; 2021.</p>
+                            <a href="https://www.ams.usda.gov/rules-regulations/be/bioengineered-foods-list" 
+                               class="text-green-700 hover:text-green-900 underline" 
+                               target="_blank">View Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-card bg-green-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-2">USDA FoodData Central</h3>
+                            <p class="mb-2">Nutrient profiles for lentils, spinach, and other ingredients. U.S. Department of Agriculture; 2019.</p>
+                            <a href="https://fdc.nal.usda.gov/" 
+                               class="text-green-700 hover:text-green-900 underline" 
+                               target="_blank">View Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-card bg-green-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-2">U.S. Food and Drug Administration</h3>
+                            <p class="mb-2">Reference daily intakes for vitamins and minerals. U.S. Food and Drug Administration; 2016.</p>
+                            <a href="https://www.fda.gov/media/99069/download" 
+                               class="text-green-700 hover:text-green-900 underline" 
+                               target="_blank">View Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-card bg-green-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-2">Anderson OS, Sant KE, Dolinoy DC</h3>
+                            <p class="mb-2">Nutrition and epigenetics: An interplay of dietary methyl donors and nutritional interventions modulating gene expression. Curr Opin Clin Nutr Metab Care. 2019;22(3):245-250.</p>
+                            <div class="bg-yellow-100 p-3 rounded mt-2 border-l-4 border-yellow-500">
+                                <p class="text-sm italic">This research explores how nutrients can influence our genetic expression without changing our DNA sequence!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-card bg-green-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">5</div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-2">Berg JM, Tymoczko JL, Stryer L</h3>
+                            <p class="mb-2">Biochemistry. 5th edition. New York: W H Freeman; 2002. Section 23.3, Amino Acids Are Made from Intermediates of the Citric Acid Cycle and Other Major Pathways.</p>
+                            <a href="https://www.ncbi.nlm.nih.gov/books/NBK22459/" 
+                               class="text-green-700 hover:text-green-900 underline" 
+                               target="_blank">View Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-card bg-green-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">6</div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-2">Hardy K, Brand-Miller J, Brown KD, Thomas MG, Copeland L</h3>
+                            <p class="mb-2">The Importance of Dietary Carbohydrate in Human Evolution. Q Rev Biol. 2015;90(3):251-268.</p>
+                            <div class="bg-yellow-100 p-3 rounded mt-2 border-l-4 border-yellow-500">
+                                <p class="text-sm italic">This fascinating paper discusses how cooking starchy foods like lentils helped fuel human brain evolution!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Epigenetics Section -->
+<div id="epigenetics" class="page pt-20">
+    <div class="container mx-auto px-4 py-12">
+        <div class="bg-white shadow-2xl rounded-xl p-8">
+            <h2 class="text-4xl font-bold mb-6 text-green-700">Epigenetics: How Lentil Soup Changes Your Genes</h2>
+            
+            <div class="mb-8">
+                <p class="text-lg mb-4">Did you know that the ingredients in lentil soup can actually influence how your genes work? It's not science fiction—it's epigenetics!</p>
+                
+                <div class="flex justify-center mb-6">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="DNA and Food" 
+                         class="rounded-xl shadow-lg w-2/3">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-green-700">What is Epigenetics?</h3>
+                    <p class="mb-4">Epigenetics is the study of how your behaviors and environment can cause changes that affect the way your genes work. Unlike genetic changes, epigenetic changes are reversible and do not change your DNA sequence.</p>
+                    <p>Think of it this way: if your DNA is like a cookbook, epigenetics is like the chef deciding which recipes to make, how much of each dish to prepare, and when to serve them.</p>
+                </div>
+                
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-green-700">How Food Affects Your Epigenome</h3>
+                    <p class="mb-4">The nutrients in your food can influence which genes are turned on or off. This happens through processes like DNA methylation and histone modification.</p>
+                    <p>Our lentil soup is specially designed to support healthy epigenetic regulation, potentially influencing gene expression related to inflammation, metabolism, and detoxification.</p>
+                </div>
+            </div>
+            
+            <!-- Direct Integration from paste.txt -->
+            <div class="bg-green-100 p-6 rounded-xl shadow-inner mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-center text-green-700">Epigenetic Components in Lentil Soup</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Methylation Supporters -->
+                    <div class="bg-white border border-green-200 rounded-xl overflow-hidden shadow-lg">
+                        <div class="bg-green-600 text-white p-4">
+                            <h4 class="text-xl font-bold">Methylation Supporters</h4>
+                            <p class="text-sm">These nutrients donate carbon groups that help regulate gene expression</p>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0 text-2xl">🌱</div>
+                                    <div>
+                                        <h5 class="font-bold">Lentils & Spinach</h5>
+                                        <p>Rich in folate (vitamin B9), which is a key methyl donor in DNA methylation.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0 text-2xl">🧄</div>
+                                    <div>
+                                        <h5 class="font-bold">Garlic & Onions</h5>
+                                        <p>Contain choline, which contributes to methylation and can support proper gene regulation.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- HDAC Inhibitors -->
+                    <div class="bg-white border border-green-200 rounded-xl overflow-hidden shadow-lg">
+                        <div class="bg-green-600 text-white p-4">
+                            <h4 class="text-xl font-bold">HDAC Inhibitors</h4>
+                            <p class="text-sm">These compounds help keep beneficial genes active</p>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0 text-2xl">🌿</div>
+                                    <div>
+                                        <h5 class="font-bold">Turmeric (Curcumin)</h5>
+                                        <p>A known HDAC inhibitor that can help turn on beneficial genes involved in inflammation reduction and disease prevention.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0 text-2xl">🧄</div>
+                                    <div>
+                                        <h5 class="font-bold">Garlic</h5>
+                                        <p>Contains sulfur compounds that may have epigenetic effects, influencing detoxification pathways and immune function.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0 text-2xl">🥬</div>
+                                    <div>
+                                        <h5 class="font-bold">Spinach & Carrots</h5>
+                                        <p>High in polyphenols and flavonoids, which have been linked to epigenetic modifications that promote health.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <p class="italic">The nutrients in Lentil Soup support healthy epigenetic regulation through methylation and HDAC inhibition, which may positively influence gene expression related to inflammation, metabolism, and detoxification.</p>
+                </div>
+            </div>
+            
+            <!-- Interactive Epigenetics Visualization -->
+            <div class="bg-green-100 p-6 rounded-xl shadow-inner mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-center">How Epigenetics Works</h3>
+                
+                <div class="grid md:grid-cols-3 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="text-5xl mb-2">🧬</div>
+                        <h4 class="font-bold mb-2">Your DNA</h4>
+                        <p class="text-sm">Your genetic code remains unchanged</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="text-5xl mb-2">🥄</div>
+                        <h4 class="font-bold mb-2">Lentil Soup</h4>
+                        <p class="text-sm">Provides nutrients that influence gene expression</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="text-5xl mb-2">✨</div>
+                        <h4 class="font-bold mb-2">Epigenetic Changes</h4>
+                        <p class="text-sm">Genes are turned on or off in response</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Amino Acid Processing Section -->
+            <div class="bg-green-50 p-6 rounded-xl shadow-md mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-green-700">Protein & Amino Acid Science</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-xl mb-2">Protein Content</h4>
+                        <p class="mb-2">Lentil soup provides approximately 20g of protein per serving, which is about 40% of your recommended daily intake.</p>
+                        <ul class="list-disc pl-6">
+                            <li>Primary source: Lentils (18g per cup)</li>
+                            <li>Secondary source: Spinach (0.9g per cup)</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-xl mb-2">Amino Acid Processing</h4>
+                        <p>Your body has remarkable ways of handling amino acids:</p>
+                        <ul class="list-disc pl-6">
+                            <li>Excess amino acids undergo deamination and enter the urea cycle</li>
+                            <li>Non-essential amino acids can be created through transamination</li>
+                            <li>Your body can synthesize what it needs from precursor molecules</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fun Fact Section -->
+            <div class="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-500">
+                <h3 class="text-xl font-bold mb-2">Fun Fact!</h3>
+                <p>While your DNA sequence is fixed from birth, your epigenome is dynamic and can change throughout your life in response to your diet, stress levels, exercise habits, and environmental exposures. This means you have some control over how your genes are expressed!</p>
+                <li>Nutrition plays a key role: Certain foods, like leafy greens and omega-3s, can support beneficial epigenetic changes.</li>
+                <li>Physical activity matters: Regular exercise can influence gene expression linked to metabolism and longevity.</li>
+            </div>
+            
+         <!-- Call to Action -->
+<div class="mt-10 text-center">
+    <p class="text-lg mb-4">Want to support your epigenome? Start with a bowl of nutrient-rich lentil soup!</p>
+    <a href="https://www.youtube.com/watch?v=mdT3tFEug00&t=25s" target="_blank">
+        <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+            Get the Recipe
+        </button>
+    </a>
+</div>
+</div>
+</div>
+</div>
+
+    <!-- Nutrition Page -->
+    <div id="nutrition" class="page pt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="bg-white shadow-2xl rounded-xl p-8">
+                <h2 class="text-4xl font-bold mb-6 text-green-700">Nutritional Breakdown</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <img src="https://smartproteinproject.eu/wp-content/uploads/shutterstock_1144805825-min-scaled.jpg" alt="Ingredients" class="rounded-xl mb-4">
+                        <h3 class="text-2xl font-semibold mb-4">Did you Know?</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Lentils are one of the most sustainable protein sources, naturally enriching soil by fixing atmospheric nitrogen and requiring significantly less water than animal-based proteins.</li>
+                            <li>Olive oil sustainability varies—though olive trees are drought-tolerant, large-scale cultivation can be water-intensive in arid regions. Opting for locally sourced oils like canola or sunflower can reduce environmental impact.</li>
+                            <li>The carbohydrates in lentil soup primarily come from lentils and vegetables, offering a blend of complex carbohydrates, fiber, and essential micronutrients.</li>
+                             <li>Lentils have a low glycemic index (GI), meaning they release glucose slowly, promoting stable blood sugar levels and sustained energy.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://www.jessicagavin.com/wp-content/uploads/2018/01/what-are-lentils-2-1200.jpg" alt="Nutrition Chart" class="rounded-xl mb-4">
+                        <h3 class="text-2xl font-semibold mb-4">Nutritional Highlights</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>High protein (40% daily intake)</li>
+                            <li>Low Glycemic Index: Helps regulate blood sugar and maintain steady energy levels.</li>
+                            <li>Rich in Complex Carbohydrates & Fiber: Lentils provide sustained energy while supporting digestive health.</li>
+                            <li>Metabolic Benefits: The meal activates key metabolic pathways, including glycolysis (energy production), glycogenesis (glucose storage), and the TCA cycle (ATP generation).</li>
+                            <li>Nutrient-Dense Vegetables: Carrots, onions, celery, and spinach contribute vitamins, minerals, and antioxidants essential for overall health.</li>
+                            <li>Sustainable Ingredient Alternatives: Consider local leafy greens like kale or chard instead of spinach, and swap olive oil for more sustainable regional oils like canola or sunflower.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Epigenetics Page -->
+    <div id="epigenetics" class="page pt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="bg-white shadow-2xl rounded-xl p-8">
+                <h2 class="text-4xl font-bold mb-6 text-green-700">Interesting </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <img src="https://files.oaiusercontent.com/file-WmuwPg8EDHNuBBcE2iqtvQ?se=2025-03-25T05%3A14%3A07Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Daafeceb5-6d1d-403b-9686-1c58bca3ec26.webp&sig=NT884/lhM2V5I7mQMmMrSJBFm8Sl3h49J64II31lyQ4%3D" alt="Epigenetics" class="rounded-xl mb-4">
+                        <h3 class="text-2xl font-semibold mb-4">Methylation Supporters</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Lentils: Rich in folate</li>
+                            <li>Garlic: Contains choline</li>
+                            <li>Supports gene regulation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://cdn.britannica.com/14/157214-050-3A82D9CD/kinds-lentils.jpg" class="rounded-xl mb-4"> 
+                        <h3 class="text-2xl font-semibold mb-4">HDAC Inhibitors</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Turmeric: Activates beneficial genes</li>
+                            <li>Reduces inflammation</li>
+                            <li>Supports cellular health</li>
+                             <li>Supports cellular health</li>
+                              <li>Supports cellular health</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Epigenetics Section -->  
+<div id="refrences" class="page pt-20" style="font-family: Arial, sans-serif;">    
+  <div class="container mx-auto px-4 py-12">    
+    <div class="bg-white shadow-2xl rounded-xl p-8">    
+      <h2 class="text-4xl font-bold mb-6 text-green-700">References</h2>    
+      <ol class="list-decimal pl-5 space-y-3">    
+        <li>Warne, T., Ahmed, S., Byker Shanks, C., & Miller, P. (2019). Sustainability dimensions of a   
+North American lentil system in a changing world. Frontiers in Sustainable Food Systems, 3, 88.   
+<a href="https://doi.org/10.3389/fsufs.2019.00088" class="text-blue-600 hover:underline">https://doi.org/10.3389/fsufs.2019.00088</a></li>    
+        <li>Clarke, S. T., Sarfaraz, S., Qi, X., Ramdath, D. G., Fougere, G. C., & Ramdath, D. D. (2022).   
+A review of the relationship between lentil serving and acute postprandial blood glucose   
+response: Effects of dietary fibre, protein and carbohydrates. Nutrients, 14(4), 849.   
+<a href="https://doi.org/10.3390/nu14040849" class="text-blue-600 hover:underline">https://doi.org/10.3390/nu14040849</a></li>    
+        <li>Allotey, D. K., Kwofie, E. M., Adewale, P., Lam, E., & Ngadi, M. (2023). Life cycle   
+sustainability assessment outlook of plant‐based protein processing and product formulations.   
+Sustainable Production and Consumption, 36, 108–125.   
+<a href="https://doi.org/10.1016/j.spc.2022.12.021" class="text-blue-600 hover:underline">https://doi.org/10.1016/j.spc.2022.12.021</a></li>    
+        <li>Padhy, A. K., Chaurasia, S., Manivannan, A., et al. (2025). Innovations in industrial and   
+functional food applications of lentil in the era of biofortification. Discov Food, 5, 48.   
+<a href="https://doi.org/10.1007/s44187-025-00322-9" class="text-blue-600 hover:underline">https://doi.org/10.1007/s44187-025-00322-9</a></li>    
+        <li>Kaale, L. D., Siddiq, M., & Hooper, S. (2023). Lentil (Lens culinaris Medik) as nutrient-rich   
+and versatile food legume: A review. Legume Science, 5(2),   
+e169. <a href="https://doi.org/10.1002/leg3.169" class="text-blue-600 hover:underline">https://doi.org/10.1002/leg3.169</a></li>    
+        <li>Ganesan, K., & Xu, B. (2017). Polyphenol‐rich lentils and their health promoting effects.   
+International Journal of Molecular Sciences, 18(11), 2390.   
+<a href="https://doi.org/10.3390/ijms18112390" class="text-blue-600 hover:underline">https://doi.org/10.3390/ijms18112390</a></li>    
+        <li>Alam, M. S., Anwar, M. J., Maity, M., et al. (2024). The dynamic role of curcumin in   
+mitigating human illnesses: Recent advances in therapeutic applications.   
+Pharmaceuticals, 17(12), 1674. <a href="https://doi.org/10.3390/ph17121674" class="text-blue-600 hover:underline">https://doi.org/10.3390/ph17121674</a></li>    
+        <li>Rezagholizade-shirvan, A., Soltani, M., Shokri, S., et al. (2024). Bioactive compound   
+encapsulation: Characteristics, applications in food systems, and implications for human   
+health. Food Chemistry: X, 24, 101953. <a href="https://doi.org/10.1016/j.fochx.2024.101953" class="text-blue-600 hover:underline">https://doi.org/10.1016/j.fochx.2024.101953</a></li>    
+        <li>Zhao, X. X., Lin, F. J., et al. (2021). Recent advances in bioactive compounds, health   
+functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition, 8,   
+669805. <a href="https://doi.org/10.3389/fnut.2021.669805" class="text-blue-600 hover:underline">https://doi.org/10.3389/fnut.2021.669805</a></li>    
+      </ol>    
+    </div>    
+  </div>    
+</div>  
+    <!-- Quiz Page -->
+<div id="quiz" class="page pt-20">
+    <div class="container mx-auto px-4 py-12">
+        <div class="bg-white shadow-2xl rounded-xl p-8">
+            <h2 class="text-4xl font-bold mb-6 text-green-700">Nutrition Knowledge Quiz</h2>
+            
+            <div id="quiz-container">
+                <form id="nutrition-quiz" class="space-y-6">
+                    <div class="quiz-question">
+                        <label class="block mb-2 font-semibold">1. What is the primary protein source in Lentil Soup?</label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="q1-a" name="q1" value="a" class="mr-2">
+                                <label for="q1-a">Spinach</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q1-b" name="q1" value="b" class="mr-2">
+                                <label for="q1-b">Lentils</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q1-c" name="q1" value="c" class="mr-2">
+                                <label for="q1-c">Olive Oil</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <label class="block mb-2 font-semibold">2. Which ingredient is a HDAC inhibitor?</label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="q2-a" name="q2" value="a" class="mr-2">
+                                <label for="q2-a">Carrots</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q2-b" name="q2" value="b" class="mr-2">
+                                <label for="q2-b">Olive Oil</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q2-c" name="q2" value="c" class="mr-2">
+                                <label for="q2-c">Turmeric</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <label class="block mb-2 font-semibold">3. Which of the following is NOT mentioned as a source of epigenetic modification in the?</label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="q3-a" name="q3" value="a" class="mr-2">
+                                <label for="q3-a">Wheat</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q3-b" name="q3" value="b" class="mr-2">
+                                <label for="q3-b">Spinach</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q3-c" name="q3" value="c" class="mr-2">
+                                <label for="q3-c">Tumeric</label>
+                            </div>
+                             <div class="flex items-center">
+                                <input type="radio" id="q3-d" name="q3" value="d" class="mr-2">
+                                <label for="q3-c">Garlic</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <label class="block mb-2 font-semibold">4. What process allows the body to create non-essential amino acids?</label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="q4-a" name="q4" value="a" class="mr-2">
+                                <label for="q4-a">Photosynthesis</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q4-b" name="q4" value="b" class="mr-2">
+                                <label for="q4-b">Transamination</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q4-c" name="q4" value="c" class="mr-2">
+                                <label for="q4-c">Glycolysis</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <label class="block mb-2 font-semibold">5. What is the primary role of HDAC inhibitors in the body?</label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="q5-a" name="q5" value="a" class="mr-2">
+                                <label for="q5-a">To reduce muscle mass</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q5-b" name="q5" value="b" class="mr-2">
+                                <label for="q5-b">To help keep beneficial genes active</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="q5-c" name="q5" value="c" class="mr-2">
+                                <label for="q5-c">To increase DNA mutations</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="submit-quiz" class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700">
+                        Submit Quiz
+                    </button>
+                </form>
+            </div>
+            
+            <div id="quiz-results" class="hidden space-y-6">
+                <h3 class="text-2xl font-bold mb-4">Your Results</h3>
+                <p id="score-display" class="text-xl font-semibold"></p>
+                
+                <div class="space-y-4">
+                    <div id="q1-result" class="p-4 rounded-lg"></div>
+                    <div id="q2-result" class="p-4 rounded-lg"></div>
+                    <div id="q3-result" class="p-4 rounded-lg"></div>
+                    <div id="q4-result" class="p-4 rounded-lg"></div>
+                    <div id="q5-result" class="p-4 rounded-lg"></div>
+                </div>
+                
+                <button id="retake-quiz" class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700">
+                    Retake Quiz
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Navigation and page switching
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+
+    // Quiz functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const quizForm = document.getElementById('nutrition-quiz');
+        const quizContainer = document.getElementById('quiz-container');
+        const resultsContainer = document.getElementById('quiz-results');
+        const scoreDisplay = document.getElementById('score-display');
+        const retakeButton = document.getElementById('retake-quiz');
+        
+        // Correct answers
+        const correctAnswers = {
+            q1: 'b', // Lentils
+            q2: 'c', // Turmeric
+            q3: 'a', // Wheat
+            q4: 'b', // Transamination
+            q5: 'b'  // To help keep beneficial genes active 
+        };
+        
+        // Question explanations
+        const explanations = {
+            q1: 'Lentils are a primary plant-based protein source, containing about 18g of protein per cup.',
+            q2: 'Turmeric contains curcumin, which has been shown to act as a histone deacetylase (HDAC) inhibitor.',
+            q3: 'The text specifically mentions turmeric, garlic, and spinach as having epigenetic effects, but wheat is not mentioned in the epigenetics discussion.',
+            q4: 'Transamination is the process by which the body transfers an amino group from one amino acid to a keto acid, allowing the synthesis of non-essential amino acids from precursor molecules.',
+            q5: 'The text describes HDAC (Histone Deacetylase) inhibitors as compounds that help turn on beneficial genes involved in inflammation reduction and disease prevention..'
+        };
+        
+        quizForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let score = 0;
+            let results = {};
+            
+            // Check each question
+            for (let i = 1; i <= 5; i++) {
+                const questionName = 'q' + i;
+                const selectedAnswer = document.querySelector('input[name="' + questionName + '"]:checked');
+                
+                // If an answer was selected
+                if (selectedAnswer) {
+                    const isCorrect = selectedAnswer.value === correctAnswers[questionName];
+                    results[questionName] = {
+                        selected: selectedAnswer.value,
+                        correct: correctAnswers[questionName],
+                        isCorrect: isCorrect
+                    };
+                    
+                    if (isCorrect) {
+                        score++;
+                    }
+                } else {
+                    // No answer selected
+                    results[questionName] = {
+                        selected: null,
+                        correct: correctAnswers[questionName],
+                        isCorrect: false
+                    };
+                }
+            }
+            
+            // Display results
+            scoreDisplay.textContent = 'You scored ' + score + ' out of 5 (' + (score/5*100) + '%)';
+            
+            // Display individual question results
+            for (let i = 1; i <= 5; i++) {
+                const questionName = 'q' + i;
+                const resultElement = document.getElementById(questionName + '-result');
+                
+                if (results[questionName].isCorrect) {
+                    resultElement.className = 'p-4 rounded-lg bg-green-100';
+                    resultElement.innerHTML = '<p class="font-bold text-green-700">Question ' + i + ': Correct!</p>' +
+                                             '<p>' + explanations[questionName] + '</p>';
+                } else {
+                    resultElement.className = 'p-4 rounded-lg bg-red-100';
+                    let answerText = '';
+                    
+                    if (results[questionName].selected === 'a') answerText = document.querySelector('label[for="' + questionName + '-a"]').textContent;
+                    else if (results[questionName].selected === 'b') answerText = document.querySelector('label[for="' + questionName + '-b"]').textContent;
+                    else if (results[questionName].selected === 'c') answerText = document.querySelector('label[for="' + questionName + '-c"]').textContent;
+                    else answerText = 'No answer selected';
+                    
+                    let correctText = '';
+                    if (correctAnswers[questionName] === 'a') correctText = document.querySelector('label[for="' + questionName + '-a"]').textContent;
+                    else if (correctAnswers[questionName] === 'b') correctText = document.querySelector('label[for="' + questionName + '-b"]').textContent;
+                    else if (correctAnswers[questionName] === 'c') correctText = document.querySelector('label[for="' + questionName + '-c"]').textContent;
+                    
+                    resultElement.innerHTML = '<p class="font-bold text-red-700">Question ' + i + ': Incorrect</p>' +
+                                             '<p>Your answer: ' + answerText + '</p>' +
+                                             '<p>Correct answer: ' + correctText + '</p>' +
+                                             '<p>' + explanations[questionName] + '</p>';
+                }
+            }
+            
+            // Hide quiz, show results
+            quizContainer.classList.add('hidden');
+            resultsContainer.classList.remove('hidden');
+        });
+        
+        // Retake quiz button
+        retakeButton.addEventListener('click', function() {
+            // Reset form
+            quizForm.reset();
+            
+            // Hide results, show quiz
+            resultsContainer.classList.add('hidden');
+            quizContainer.classList.remove('hidden');
+        });
+    });
+</script>
+

@@ -25,6 +25,7 @@
                 <a href="#epigenetics" class="nav-link hover:text-green-200">Epigenetics</a>
                 <a href="#quiz" class="nav-link hover:text-green-200">Quiz</a>
                 <a href="#abouttheauthor" class="nav-link hover:text-green-300">Author</a>
+                <a href="#videos" class="nav-link hover:text-green-300">Videos</a>
                 
             </div>
             
@@ -38,19 +39,90 @@
                 <h1 class="text-5xl font-bold mb-4 text-green-700">Lentil Soup: A Culinary Adventure</h1>
                <img src="https://www.cookingclassy.com/wp-content/uploads/2017/01/lentil-soup-2.jpg"   
      alt="Multifaceted-Lentil Soup"   
-     class="mx-auto mb-6 rounded-xl shadow-lg w-96">  
+     class="mx-auto mb-4 rounded-xl shadow-lg w-80">  
 <img src="https://peasandcrayons.com/wp-content/uploads/2015/02/madras-lentil-soup-recipe-2.jpg"   
      alt="Madras Lentil Soup"   
-     class="mx-auto mb-6 rounded-xl shadow-lg w-96">  
+     class="mx-auto mb-4 rounded-xl shadow-lg w-80">  
 <img src="https://jessicainthekitchen.com/wp-content/uploads/2022/01/Lentil-Soup-10.jpg"   
      alt="Hearty Lentil Soup"   
-     class="mx-auto mb-6 rounded-xl shadow-lg w-96">  
+     class="mx-auto mb-4 rounded-xl shadow-lg w-80">  
 <p class="text-xl text-gray-700 mb-6">  
 <p class="text-xl text-gray-700 mb-6"> 
                     A Journey Through Nutrition, Sustainability, and Health
                 </p>
             <a href="#nutrition" class="nav-link bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">Explore the Nutrition</a>   
             </div>
+             <!-- World Map Visualization -->
+    <div class="mt-8">
+        <h4 class="text-xl font-semibold mb-4 text-green-700">Global Lentil Celebration Map</h4>
+        <div class="bg-gray-100 p-4 rounded-lg">
+            <canvas id="lentilMap" width="300" height="200"></canvas>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const ctx = document.getElementById('lentilMap').getContext('2d');
+                
+                // Create a world map visualization
+                const lentilMap = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['India', 'Italy', 'France', 'Ethiopia', 'Morocco', 'Spain', 'Turkey', 'Canada', 'Nepal', 'Brazil'],
+                        datasets: [{
+                            label: 'Lentil Celebration Significance (1-10)',
+                            data: [9, 8, 10, 7, 8, 6, 7, 9, 8, 6],
+                            backgroundColor: [
+                                'rgba(76, 175, 80, 0.8)',
+                                'rgba(76, 175, 80, 0.7)',
+                                'rgba(76, 175, 80, 0.9)',
+                                'rgba(76, 175, 80, 0.6)',
+                                'rgba(76, 175, 80, 0.7)',
+                                'rgba(76, 175, 80, 0.5)',
+                                'rgba(76, 175, 80, 0.6)',
+                                'rgba(76, 175, 80, 0.8)',
+                                'rgba(76, 175, 80, 0.7)',
+                                'rgba(76, 175, 80, 0.5)'
+                            ],
+                            borderColor: 'rgba(46, 125, 50, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 10,
+                                title: {
+                                    display: true,
+                                    text: 'Cultural Significance'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Countries'
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Lentil Celebrations Around the World',
+                                font: {
+                                    size: 16
+                                }
+                            },
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>
         </div>
     </div>
     <html lang="en">  
@@ -68,6 +140,7 @@
         }  
         .page.active { display: block; }  
     </style>  
+
 </head>  
 
 <body class="bg-gradient-to-br from-brown-400 to-red-500 via-orange-400 font-sans">  
@@ -87,6 +160,7 @@
                 <a href="#refrences" class="nav-link hover:text-green-200">References</a>
                 <a href="#quiz" class="nav-link hover:text-green-200">Quiz</a>
                 <a href="#abouttheauthor" class="nav-link hover:text-green-200">AboutThe Author</a>
+                <a href="#videos" class="nav-link hover:text-green-200">Videos</a>
             </div>
         </div>
     </nav>
@@ -130,7 +204,7 @@
                 <h2 class="text-4xl font-bold mb-6 text-green-700">Discover Lentil Soup</h2>  
                 <div class="grid md:grid-cols-2 gap-8">  
                     <div>  
-                        <img src="https://www.cookingclassy.com/wp-content/uploads/2017/01/lentil-soup-2.jpg" alt="Lentil Soup" class="rounded-xl mb-4">  
+                        <img src="https://www.cookingclassy.com/wp-content/uploads/2017/01/lentil-soup-2.jpg" alt="Lentil Soup" class="rounded-xl mb-2" style="max-width: 200px; width: 90%; height: auto;">  
                         <h3 class="text-2xl font-semibold mb-4">A Delicious & Comforting Meal</h3>  
                         <p class="mb-4">  
                             Discover a delightful and hearty lentil soup crafted with a blend of fresh vegetables including carrots, onions, celery, and garlic. The aromatic spices—cumin, coriander, and turmeric—enhance the flavors, while a handful of fresh spinach is added at the end to infuse additional nutrients.  
@@ -140,7 +214,10 @@
                         </p>  
                     </div>  
                     <div>  
-                        <img src="https://peasandcrayons.com/wp-content/uploads/2015/02/madras-lentil-soup-recipe-2.jpg" alt="Lentil Soup Serving" class="rounded-xl mb-4">  
+                        <img src="https://peasandcrayons.com/wp-content/uploads/2015/02/madras-lentil-soup-recipe-2.jpg"   
+     alt="Lentil Soup Serving"   
+     class="rounded-xl mb-2"   
+     style="max-width: 200px; width: 90%; height: auto;">
                         <h3 class="text-2xl font-semibold mb-4">Why This Meal Matters</h3>  
                         <p class="mb-4">  
                             This lentil soup is more than just a meal—it's a treasure trove of memories and traditions. Reminiscent of family gatherings and cherished moments at home, the soup embodies comfort and simplicity.  
@@ -159,15 +236,88 @@
                         Lentil soup contains all three macronutrients—carbohydrates, proteins, and fats—which are metabolized through distinct but interconnected pathways:
                     </p>
                     <ul class="mb-4 space-y-2">
-                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
-                            <span><strong>Carbohydrates:</strong> Lentils and vegetables provide complex carbohydrates, which are broken down into glucose and metabolized via glycolysis, followed by the TCA cycle and oxidative phosphorylation for ATP production. Excess glucose may be stored as glycogen through glycogenesis.</span>
-                        </li>
-                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
-                            <span><strong>Proteins:</strong> The lentils contribute plant-based protein, which is digested into amino acids. These amino acids enter the amino acid catabolism pathways, where they can be used for energy, neurotransmitter synthesis, or gluconeogenesis if needed.</span>
-                        </li>
-                        <li class="flex items-start"><span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
-                            <span><strong>Fats:</strong> Olive oil provides healthy monounsaturated fats that are broken down through beta-oxidation, generating acetyl-CoA for the TCA cycle and ATP production.</span>
-                        </li>
+                        <li class="flex items-start">
+    <span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+    <div class="flex flex-col">
+        <span><strong>Carbohydrates:</strong> Lentils and vegetables provide complex carbohydrates, which are broken down into glucose and metabolized via glycolysis, followed by the TCA cycle and oxidative phosphorylation for ATP production. Excess glucose may be stored as glycogen through glycogenesis.</span>
+        
+        <div class="mt-2 ml-4">
+            <div class="grid grid-cols-2 gap-2">
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Lentils (1 cup cooked):</span>
+                    <span class="block text-sm">~40g of carbohydrates (complex carbs, fiber)</span>
+                </div>
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Carrots (1 medium):</span>
+                    <span class="block text-sm">~6g of carbohydrates (simple sugars, fiber)</span>
+                </div>
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Onion (1 medium):</span>
+                    <span class="block text-sm">~10g of carbohydrates (simple sugars, fiber)</span>
+                </div>
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Celery (2 stalks):</span>
+                    <span class="block text-sm">~2g of carbohydrates (fiber, minimal sugars)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+                        <li class="flex items-start">
+    <span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+    <div class="flex flex-col">
+        <span><strong>Proteins:</strong> The lentils contribute plant-based protein, which is digested into amino acids. These amino acids enter the amino acid catabolism pathways, where they can be used for energy, neurotransmitter synthesis, or gluconeogenesis if needed.</span>
+        
+        <div class="mt-2 ml-4">
+            <div class="grid grid-cols-2 gap-2">
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Lentils (1 cup cooked):</span>
+                    <span class="block text-sm">~18g of protein (excellent source of plant-based protein, along with fiber and complex carbohydrates)</span>
+                </div>
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Carrots (1 medium):</span>
+                    <span class="block text-sm">~1g of protein (small amount, primarily a source of fiber and carbohydrates)</span>
+                </div>
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Onion (1 medium):</span>
+                    <span class="block text-sm">~1g of protein (small amount, primarily adds flavor and provides fiber)</span>
+                </div>
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Celery (2 stalks):</span>
+                    <span class="block text-sm">~1g of protein (very small amount, mainly known for fiber content)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+
+                       <li class="flex items-start">
+    <span class="h-2 w-2 bg-green-500 rounded-full mr-2 mt-2"></span>
+    <div class="flex flex-col">
+        <span><strong>Fats:</strong> Olive oil provides healthy monounsaturated fats that are broken down through beta-oxidation, generating acetyl-CoA for the TCA cycle and ATP production.</span>
+        
+        <div class="mt-2 ml-4">
+            <div class="grid grid-cols-2 gap-2">
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Monounsaturated Fats:</span>
+                    <span class="block text-sm">Found in olive oil (Leech, 2023).</span>
+                </div>
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Polyunsaturated Fats:</span>
+                    <span class="block text-sm">Lentils and vegetables provide small amounts of omega-3 and omega-6 fatty acids (O'Brien, 2023).</span>
+                </div>
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Exclusions:</span>
+                    <span class="block text-sm">No Trans Fats, Cholesterol, DHA, or EPA in this meal.</span>
+                </div>
+                <div class="bg-gray-100 p-2 rounded">
+                    <span class="font-semibold">Essential Fatty Acids:</span>
+                    <span class="block text-sm">Linoleic Acid (Omega-6) & Alpha-Linolenic Acid (Omega-3) in small amounts in vegetables and lentils (O'Brien, 2023).</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
                     </ul>
                     
                     <h4 class="text-xl font-semibold mb-3">Pathway Regulation & Enzymatic Activity</h4>
@@ -238,10 +388,10 @@
                 <div class="flex justify-center mb-6">  
     <img src="https://lh3.googleusercontent.com/pw/AP1GczMSgSmNaJW8tXtwjoxS_q0BrmufvETZ1i2Hr7SoWmhTmvWWUmWAGI8z6o9LDS9TjNhjZgHo0U1zrcYUckSquSFHosca5b3cz6rDmk1ySC7glPBHAH_GOZ8W-7v4f7aAV6e5-SfO0dGCWJR7MuzCffcs=w1024-h1024-s-no-gm?authuser=0"   
          alt="Research and Science"   
-         class="rounded-xl shadow-lg w-1/2 mr-2">  
+         class="rounded-xl shadow-lg w-1/2 mr-1">  
     <img src="https://image.lexica.art/md2_webp/e0d1263f-3c39-4641-bc2e-891cc32d3728"   
          alt="Research and Science"   
-         class="rounded-xl shadow-lg w-1/2 ml-2">
+         class="rounded-xl shadow-lg w-1/2 ml-1">
            
 </div>  
             </div>
@@ -312,6 +462,7 @@
                         </ol>
                         <p class="mt-2">From what I understand, as long as the body has enough nitrogen and precursor molecules, it can synthesize most non-essential amino acids, making dietary intake of these specific amino acids unnecessary.</p>
                     </div>
+                    
                 </div>
             </div>
             
@@ -680,6 +831,87 @@ functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition
     </div>    
   </div>    
 </div>  
+
+<!-- Videos Section -->  
+<div id="videos" class="page pt-20">  
+    <head>  
+    <style>  
+        .video-section {  
+            background-color: black;  
+            padding: 30px;  
+            text-align: center;  
+        }  
+        .video-container {  
+            display: inline-block;  
+            margin: 15px;  
+            border: 5px solid green;  
+            border-radius: 10px;  
+            overflow: hidden;  
+        }  
+        .video-title {  
+            color: white;  
+            font-family: Arial, sans-serif;  
+            margin-bottom: 10px;  
+            font-size: 18px;  
+        }  
+        h1 {  
+            color: white;  
+            font-family: Arial, sans-serif;  
+            margin-bottom: 30px;  
+        }  
+    </style>  
+</head>  
+<body>  
+   <!-- Videos Section -->  
+<div id="videos" class="video-section">  
+    <h1>Video Collection</h1>  
+        
+    <!-- YouTube Video -->  
+    <div class="video-container">  
+        <div class="video-title">YouTube Video</div>  
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JWtY1Oi-XwI"     
+            title="YouTube video player" frameborder="0"     
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"     
+            allowfullscreen>  
+        </iframe>  
+    </div>  
+        
+    <!-- YouTube Video - Homemade Lentil Soup -->  
+    <div class="video-container">  
+        <div class="video-title">Homemade Lentil Soup vs Canned Soup</div>  
+        <iframe width="560" height="420" src="https://www.youtube.com/embed/opDPjvqCTS8"     
+            title="Homemade Lentil Soup vs Canned Soup" frameborder="0"     
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"     
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>  
+        </iframe>  
+    </div>  
+        
+    <!-- YouTube Video - Additional Lentil Video -->  
+    <div class="video-container">  
+        <div class="video-title">Additional Lentil Video</div>  
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Y-XnjsbQxcA?si=sfkvSBw0IGYCKy5y&amp;start=105"     
+            title="YouTube video player" frameborder="0"     
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"     
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>  
+        </iframe>  
+    </div>  
+        
+    <!-- Panopto Embedded Video -->  
+    <div class="video-container">  
+        <div class="video-title">Lentil Soup Website Exploration</div>  
+        <iframe width="560" height="315" src="https://arizona.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=2c625a10-1b22-4f2a-a4af-b2bc0136e5b3&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all"  
+            title="Panopto Embedded Video Player"  
+            style="border: 1px solid #464646;"  
+            allowfullscreen  
+            allow="autoplay"  
+            aria-label="Panopto Embedded Video Player"  
+            aria-description="Fri Apr 11 2025 11:47:30 AM">  
+        </iframe>  
+    </div>  
+    </div>  
+</body>    
+</div>  
+
     <!-- Quiz Page -->
 <div id="quiz" class="page pt-20">
     <div class="container mx-auto px-4 py-12">
@@ -960,7 +1192,9 @@ functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">    
     <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>    
   </svg>    
+  
 </a>  
+
             
           </div>
         </div>
@@ -998,27 +1232,8 @@ functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition
     </nav>
 
     <!-- Home Page -->
-    <div id="home" class="page active pt-20">
-        <div class="container mx-auto px-4 py-12">
-            <div class="bg-white shadow-2xl rounded-xl p-8 text-center">
-                <h1 class="text-5xl font-bold mb-4 text-green-700">Lentil Soup: A Culinary Adventure</h1>
-               <img src="https://www.cookingclassy.com/wp-content/uploads/2017/01/lentil-soup-2.jpg"   
-     alt="Multifaceted-Lentil Soup"   
-     class="mx-auto mb-6 rounded-xl shadow-lg w-96">  
-<img src="https://peasandcrayons.com/wp-content/uploads/2015/02/madras-lentil-soup-recipe-2.jpg"   
-     alt="Madras Lentil Soup"   
-     class="mx-auto mb-6 rounded-xl shadow-lg w-96">  
-<img src="https://jessicainthekitchen.com/wp-content/uploads/2022/01/Lentil-Soup-10.jpg"   
-     alt="Hearty Lentil Soup"   
-     class="mx-auto mb-6 rounded-xl shadow-lg w-96">  
-<p class="text-xl text-gray-700 mb-6">  
-<p class="text-xl text-gray-700 mb-6"> 
-                    A Journey Through Nutrition, Sustainability, and Health
-                </p>
-            <a href="#nutrition" class="nav-link bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">Explore the Nutrition</a>   
-            </div>
-        </div>
-    </div>
+    
+            
     <html lang="en">  
 <head>  
     <meta charset="UTF-8">  
@@ -1052,7 +1267,9 @@ functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition
                 <a href="#science" class="nav-link hover:text-green-200">Science</a>
                 <a href="#refrences" class="nav-link hover:text-green-200">References</a>
                 <a href="#quiz" class="nav-link hover:text-green-200">Quiz</a>
+                <a href="#videos" class="nav-link hover:text-green-200">Videos</a>
                 <a href="#abouttheauthor" class="nav-link hover:text-green-200">About The Author</a>
+                
             </div>
         </div>
     </nav>
@@ -1569,6 +1786,7 @@ functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition
             </div>
         </div>
     </div>
+    
 
     <!-- Epigenetics Page -->
     <div id="epigenetics" class="page pt-20">
@@ -1888,5 +2106,3 @@ functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition
         });
     });
 </script>
-
-

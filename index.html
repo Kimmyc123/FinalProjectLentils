@@ -64,7 +64,7 @@
     <div class="mt-8">
         <h4 class="text-xl font-semibold mb-4 text-green-700">Global Lentil Celebration Map</h4>
         <div class="bg-gray-100 p-4 rounded-lg">
-            <canvas id="lentilMap" width="100" height="50"></canvas>
+            <canvas id="lentilMap" width="50" height="50"></canvas>
         </div>
         
         <script>
@@ -741,6 +741,97 @@
        width="80"   
        height="80">  
 </div>  
+<!-- Build Your Own Soup Tool -->
+<div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="bg-white shadow-2xl rounded-xl p-8">
+        <h2 class="text-4xl font-bold mb-6 text-green-700">🥣 Build Your Own Lentil Soup</h2>
+
+        <!-- Use grid with a default of 1 column for small screens and switch to 2 columns on medium screens and above -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <!-- Selections -->
+            <div class="space-y-6 w-full">
+                <div>
+                    <label class="block font-semibold text-lg mb-2">Choose your lentils:</label>
+                    <select id="lentilType" class="w-full border border-gray-300 rounded px-4 py-2">
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="brown">Brown</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-lg mb-2">Add-ins:</label>
+                    <div class="grid grid-cols-2 gap-2 w-full">
+                        <label class="flex items-center"><input type="checkbox" value="carrots" class="mr-2">Carrots</label>
+                        <label class="flex items-center"><input type="checkbox" value="celery" class="mr-2">Celery</label>
+                        <label class="flex items-center"><input type="checkbox" value="onion" class="mr-2">Onion</label>
+                        <label class="flex items-center"><input type="checkbox" value="quinoa" class="mr-2">Quinoa</label>
+                        <label class="flex items-center"><input type="checkbox" value="spinach" class="mr-2">Spinach</label>
+                        <label class="flex items-center"><input type="checkbox" value="garlic" class="mr-2">Garlic</label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-lg mb-2">Cooking Method:</label>
+                    <select id="cookingMethod" class="w-full border border-gray-300 rounded px-4 py-2">
+                        <option>Stovetop</option>
+                        <option>Slow Cooker</option>
+                        <option>Instant Pot</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Nutrition Display -->
+            <div class="bg-green-50 p-6 rounded-xl shadow-inner w-full" id="nutritionInfo">
+                <h3 class="text-2xl font-bold mb-4 text-green-800">🧪 Nutritional Info</h3>
+                <p><strong>Calories:</strong> <span id="calories">0</span> kcal</p>
+                <p><strong>Protein:</strong> <span id="protein">0</span> g</p>
+                <p><strong>Fiber:</strong> <span id="fiber">0</span> g</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    const lentilData = {
+        red: { calories: 230, protein: 18, fiber: 15 },
+        green: { calories: 250, protein: 20, fiber: 16 },
+        brown: { calories: 245, protein: 19, fiber: 15 },
+    };
+
+    const addInData = {
+        carrots: { calories: 25, protein: 0.5, fiber: 1.5 },
+        celery: { calories: 10, protein: 0.3, fiber: 1 },
+        onion: { calories: 40, protein: 1, fiber: 1.5 },
+        quinoa: { calories: 120, protein: 4, fiber: 2.5 },
+        spinach: { calories: 7, protein: 1, fiber: 0.7 },
+        garlic: { calories: 5, protein: 0.2, fiber: 0.1 },
+    };
+
+    function updateNutrition() {
+        const lentilType = document.getElementById('lentilType').value;
+        const checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+        let total = { ...lentilData[lentilType] };
+
+        checkboxes.forEach(cb => {
+            const addIn = addInData[cb.value];
+            total.calories += addIn.calories;
+            total.protein += addIn.protein;
+            total.fiber += addIn.fiber;
+        });
+
+        document.getElementById('calories').textContent = total.calories;
+        document.getElementById('protein').textContent = total.protein.toFixed(1);
+        document.getElementById('fiber').textContent = total.fiber.toFixed(1);
+    }
+
+    document.getElementById('lentilType').addEventListener('change', updateNutrition);
+    document.querySelectorAll('input[type=checkbox]').forEach(cb => cb.addEventListener('change', updateNutrition));
+</script>
                 </div>
             </div>
         </div>
@@ -1185,6 +1276,7 @@ functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition
         });
     });
 </script>
+
 
 <!-- About the Author Section -->
 <div id="abouttheauthor" class="page pt-20" style="font-family: Arial, sans-serif;">

@@ -744,7 +744,7 @@
        height="80">  
 </div>  
 <!-- Build Your Own Soup Tool -->
-<script src="https://cdn.tailwindcss.com"></script>  
+ <script src="https://cdn.tailwindcss.com"></script>  
 </head>  
 <body class="bg-gray-50">  
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-12">  
@@ -755,7 +755,7 @@
                 <!-- Selections -->  
                 <div class="space-y-6 w-full">  
                     <div>  
-                        <label class="block font-semibold text-lg mb-2">Choose your lentils:</label>  
+                        <label class="block font-semibold text-lg mb-2">Choose your lentils (1 cup serving):</label>  
                         <select id="lentilType" class="w-full border-2 border-gray-300 rounded-lg px-4 py-3 text-lg focus:border-green-500 focus:ring focus:ring-green-200">  
                             <option value="red">Red Lentils</option>  
                             <option value="green">Green Lentils</option>  
@@ -768,48 +768,68 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">  
                             <label class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100">  
                                 <input type="checkbox" value="carrots" class="w-6 h-6 mr-3">  
-                                <span class="text-lg">Carrots</span>  
+                                <span class="text-lg">Carrots (1/2 cup, diced)</span>  
                             </label>  
                             <label class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100">  
                                 <input type="checkbox" value="celery" class="w-6 h-6 mr-3">  
-                                <span class="text-lg">Celery</span>  
+                                <span class="text-lg">Celery (1/2 cup, diced)</span>  
                             </label>  
                             <label class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100">  
                                 <input type="checkbox" value="onion" class="w-6 h-6 mr-3">  
-                                <span class="text-lg">Onion</span>  
+                                <span class="text-lg">Onion (1/2 cup, diced)</span>  
                             </label>  
                             <label class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100">  
                                 <input type="checkbox" value="quinoa" class="w-6 h-6 mr-3">  
-                                <span class="text-lg">Quinoa</span>  
+                                <span class="text-lg">Quinoa (1/4 cup)</span>  
                             </label>  
                             <label class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100">  
                                 <input type="checkbox" value="spinach" class="w-6 h-6 mr-3">  
-                                <span class="text-lg">Spinach</span>  
+                                <span class="text-lg">Spinach (1 cup)</span>  
                             </label>  
                             <label class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100">  
                                 <input type="checkbox" value="garlic" class="w-6 h-6 mr-3">  
-                                <span class="text-lg">Garlic</span>  
+                                <span class="text-lg">Garlic (2 cloves)</span>  
+                            </label>  
+                            <label class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100">  
+                                <input type="checkbox" value="tomatoes" class="w-6 h-6 mr-3">  
+                                <span class="text-lg">Tomatoes (1 cup, diced)</span>  
+                            </label>  
+                            <label class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100">  
+                                <input type="checkbox" value="bellPeppers" class="w-6 h-6 mr-3">  
+                                <span class="text-lg">Bell Peppers (1/2 cup)</span>  
+                            </label>  
+                            <label class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100">  
+                                <input type="checkbox" value="olives" class="w-6 h-6 mr-3">  
+                                <span class="text-lg">Olives (1/4 cup, sliced)</span>  
                             </label>  
                         </div>  
                     </div>  
-  
-                    <div>  
-                        <label class="block font-semibold text-lg mb-2">Cooking Method:</label>  
-                        <select id="cookingMethod" class="w-full border-2 border-gray-300 rounded-lg px-4 py-3 text-lg focus:border-green-500 focus:ring focus:ring-green-200">  
-                            <option>Stovetop</option>  
-                            <option>Slow Cooker</option>  
-                            <option>Instant Pot</option>  
-                        </select>  
-                    </div>  
                 </div>  
   
-                <!-- Nutrition Display -->  
+                <!-- Nutrition Panel -->  
                 <div class="bg-green-50 p-6 rounded-xl shadow-inner w-full sticky top-4" id="nutritionInfo">  
                     <h3 class="text-2xl font-bold mb-4 text-green-800">🧪 Nutritional Info</h3>  
                     <div class="space-y-3 text-lg">  
-                        <p><strong>Calories:</strong> <span id="calories">0</span> kcal</p>  
-                        <p><strong>Protein:</strong> <span id="protein">0</span> g</p>  
-                        <p><strong>Fiber:</strong> <span id="fiber">0</span> g</p>  
+                        <div class="flex justify-between items-center border-b border-green-200 pb-2">  
+                            <span class="text-lg">Calories:</span>  
+                            <span class="text-xl font-bold" id="calories">0</span>  
+                        </div>  
+                        <div class="flex justify-between items-center border-b border-green-200 pb-2">  
+                            <span class="text-lg">Protein:</span>  
+                            <span class="text-xl font-bold"><span id="protein">0</span>g</span>  
+                        </div>  
+                        <div class="flex justify-between items-center border-b border-green-200 pb-2">  
+                            <span class="text-lg">Fiber:</span>  
+                            <span class="text-xl font-bold"><span id="fiber">0</span>g</span>  
+                        </div>  
+                        <div class="flex justify-between items-center border-b border-green-200 pb-2">  
+                            <span class="text-lg">Carbohydrates:</span>  
+                            <span class="text-xl font-bold"><span id="carbs">0</span>g</span>  
+                        </div>  
+                        <div class="flex justify-between items-center pb-2">  
+                            <span class="text-lg">Fat:</span>  
+                            <span class="text-xl font-bold"><span id="fat">0</span>g</span>  
+                        </div>  
                     </div>  
                 </div>  
             </div>  
@@ -818,18 +838,21 @@
   
     <script>  
         const lentilData = {  
-            red: { calories: 230, protein: 18, fiber: 15 },  
-            green: { calories: 250, protein: 20, fiber: 16 },  
-            brown: { calories: 245, protein: 19, fiber: 15 },  
+            red: { calories: 230, protein: 18, fiber: 15, carbs: 40, fat: 0.8 },  
+            green: { calories: 250, protein: 20, fiber: 16, carbs: 43, fat: 0.9 },  
+            brown: { calories: 245, protein: 19, fiber: 15, carbs: 41, fat: 0.8 },  
         };  
   
         const addInData = {  
-            carrots: { calories: 25, protein: 0.5, fiber: 1.5 },  
-            celery: { calories: 10, protein: 0.3, fiber: 1 },  
-            onion: { calories: 40, protein: 1, fiber: 1.5 },  
-            quinoa: { calories: 120, protein: 4, fiber: 2.5 },  
-            spinach: { calories: 7, protein: 1, fiber: 0.7 },  
-            garlic: { calories: 5, protein: 0.2, fiber: 0.1 },  
+            carrots: { calories: 25, protein: 0.5, fiber: 1.5, carbs: 6, fat: 0.1 },  
+            celery: { calories: 10, protein: 0.3, fiber: 1, carbs: 2, fat: 0.1 },  
+            onion: { calories: 40, protein: 1, fiber: 1.5, carbs: 9, fat: 0.1 },  
+            quinoa: { calories: 120, protein: 4, fiber: 2.5, carbs: 21, fat: 1.9 },  
+            spinach: { calories: 7, protein: 1, fiber: 0.7, carbs: 1, fat: 0.1 },  
+            garlic: { calories: 5, protein: 0.2, fiber: 0.1, carbs: 1, fat: 0 },  
+            tomatoes: { calories: 32, protein: 1.6, fiber: 2.2, carbs: 7, fat: 0.4 },  
+            bellPeppers: { calories: 15, protein: 0.5, fiber: 1.1, carbs: 3.5, fat: 0.2 },  
+            olives: { calories: 37, protein: 0.3, fiber: 0.8, carbs: 1, fat: 3.8 }  
         };  
   
         function updateNutrition() {  
@@ -842,11 +865,15 @@
                 total.calories += addIn.calories;  
                 total.protein += addIn.protein;  
                 total.fiber += addIn.fiber;  
+                total.carbs += addIn.carbs;  
+                total.fat += addIn.fat;  
             });  
   
-            document.getElementById('calories').textContent = total.calories;  
+            document.getElementById('calories').textContent = Math.round(total.calories);  
             document.getElementById('protein').textContent = total.protein.toFixed(1);  
             document.getElementById('fiber').textContent = total.fiber.toFixed(1);  
+            document.getElementById('carbs').textContent = total.carbs.toFixed(1);  
+            document.getElementById('fat').textContent = total.fat.toFixed(1);  
         }  
   
         // Initialize nutrition on page load  
@@ -857,8 +884,7 @@
         document.querySelectorAll('input[type=checkbox]').forEach(cb =>  
             cb.addEventListener('change', updateNutrition)  
         );  
-    </script>  
-                </div>
+    </script>                  </div>
             </div>
         </div>
     </div>

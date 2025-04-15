@@ -60,77 +60,7 @@
                 </p>
             <a href="#nutrition" class="nav-link bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">Explore the Nutrition</a>   
             </div>
-             <!-- World Map Visualization -->
-    <div class="mt-8">
-        <h4 class="text-xl font-semibold mb-4 text-green-700">Global Lentil Celebration Map</h4>
-        <div class="bg-gray-100 p-4 rounded-lg">
-            <canvas id="lentilMap" width="50" height="50"></canvas>
-        </div>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const ctx = document.getElementById('lentilMap').getContext('2d');
-                
-                // Create a world map visualization
-                const lentilMap = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['India', 'Italy', 'France', 'Ethiopia', 'Morocco', 'Spain', 'Turkey', 'Canada', 'Nepal', 'Brazil'],
-                        datasets: [{
-                            label: 'Lentil Celebration Significance (1-10)',
-                            data: [9, 8, 10, 7, 8, 6, 7, 9, 8, 6],
-                            backgroundColor: [
-                                'rgba(76, 175, 80, 0.8)',
-                                'rgba(76, 175, 80, 0.7)',
-                                'rgba(76, 175, 80, 0.9)',
-                                'rgba(76, 175, 80, 0.6)',
-                                'rgba(76, 175, 80, 0.7)',
-                                'rgba(76, 175, 80, 0.5)',
-                                'rgba(76, 175, 80, 0.6)',
-                                'rgba(76, 175, 80, 0.8)',
-                                'rgba(76, 175, 80, 0.7)',
-                                'rgba(76, 175, 80, 0.5)'
-                            ],
-                            borderColor: 'rgba(46, 125, 50, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 10,
-                                title: {
-                                    display: true,
-                                    text: 'Cultural Significance'
-                                }
-                            },
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Countries'
-                                }
-                            }
-                        },
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Lentil Celebrations Around the World',
-                                font: {
-                                    size: 16
-                                }
-                            },
-                            legend: {
-                                display: false
-                            }
-                        }
-                    }
-                });
-            });
-        </script>
-        
-    </div>
+            
     
 </div>
         </div>
@@ -169,7 +99,6 @@
                 <a href="#science" class="nav-link hover:text-green-200">Science</a>
                 <a href="#refrences" class="nav-link hover:text-green-200">References</a>
                 <a href="#quiz" class="nav-link hover:text-green-200">Quiz</a>
-                <a href="#abouttheauthor" class="nav-link hover:text-green-200">AboutThe Author</a>
                 <a href="#videos" class="nav-link hover:text-green-200">Videos</a>
             </div>
         </div>
@@ -808,8 +737,8 @@
   
                 <!-- Nutrition Panel -->  
                 <div class="bg-green-50 p-6 rounded-xl shadow-inner w-full sticky top-4" id="nutritionInfo">  
-                    <h3 class="text-2xl font-bold mb-4 text-green-800">🧪 Nutritional Info</h3>  
-                    <div class="space-y-3 text-lg">  
+                    <h3 class="text-2xl font-bold mb-4 text-green-800">🧪 Nutritiona Info</h3>  
+                    <div class="space-y-1 text-lg">  
                         <div class="flex justify-between items-center border-b border-green-200 pb-2">  
                             <span class="text-lg">Calories:</span>  
                             <span class="text-xl font-bold" id="calories">0</span>  

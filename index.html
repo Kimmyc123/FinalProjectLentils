@@ -63,6 +63,7 @@
             
     
 </div>
+
         </div>
     </div>
     <html lang="en">  
@@ -635,6 +636,7 @@
     </a>
 </div>
 </div>
+
 </div>
 </div>
 
@@ -1134,6 +1136,316 @@ functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition
 </div>  
         </div>
     </div>
+    <head>
+    <meta charset="UTF-8">
+    <title>Metabolic & Epigenetic Crossword</title>
+    <style>
+        .nutri_cross_wrapper {
+            all: initial;
+            font-family: Arial, sans-serif;
+            display: block;
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            contain: content;
+        }
+        .nutri_cross_wrapper * {
+            box-sizing: border-box;
+        }
+        .nutri_cross_container {
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .nutri_cross_grid_container {
+            flex: 0 0 auto;
+            min-width: 600px;
+            contain: content;
+        }
+        .nutri_cross_grid {
+            display: grid;
+            grid-template-columns: repeat(15, 40px);
+            grid-template-rows: repeat(15, 40px);
+            gap: 1px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            contain: content;
+        }
+        .nutri_cross_cell {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: white;
+        }
+        .nutri_cross_cell input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0;
+            background: transparent;
+        }
+        .nutri_cross_number {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            font-size: 10px;
+            z-index: 1;
+        }
+        .nutri_cross_clues {
+            flex: 1 1 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-height: 800px;
+            overflow-y: auto;
+        }
+        .nutri_cross_button_container {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .nutri_cross_button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .nutri_cross_button:hover {
+            background: #45a049;
+        }
+        .nutri_cross_result {
+            text-align: center;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+        .nutri_cross_title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        @media (max-width: 968px) {
+            .nutri_cross_container {
+                flex-direction: column;
+            }
+            .nutri_cross_grid_container {
+                min-width: unset;
+                width: 100%;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nutri_cross_wrapper">
+        <h1 class="nutri_cross_title">Metabolic & Epigenetic Crossword</h1>
+        <div class="nutri_cross_container">
+            <div class="nutri_cross_grid_container">
+                <div class="nutri_cross_grid" id="nutri_cross_grid"></div>
+                <div class="nutri_cross_button_container">
+                    <button class="nutri_cross_button" onclick="nutriCrossCheckAnswers()">Check Answers</button>
+                </div>
+                <p class="nutri_cross_result" id="nutri_cross_result"></p>
+            </div>
+            <div class="nutri_cross_clues">
+                <h3>Across</h3>
+                <div id="nutri_cross_across_clues"></div>
+                <h3>Down</h3>
+                <div id="nutri_cross_down_clues"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const nutriCrossWords = [
+                {
+                    word: "METHYLATION",
+                    clue: "Key epigenetic modification process that can be influenced by B-vitamins",
+                    row: 2,
+                    col: 3,
+                    direction: "across",
+                    number: 2
+                },
+                {
+                    word: "NADH",
+                    clue: "Reduced form of nicotinamide adenine dinucleotide, crucial in electron transport chain",
+                    row: 2,
+                    col: 3,
+                    direction: "down",
+                    number: 2
+                },
+                {
+                    word: "ACETYLCOA",
+                    clue: "Key metabolic intermediate formed from pyruvate, enters Krebs cycle",
+                    row: 4,
+                    col: 1,
+                    direction: "across",
+                    number: 3
+                },
+                {
+                    word: "HISTONE",
+                    clue: "Protein around which DNA wraps, subject to epigenetic modifications",
+                    row: 1,
+                    col: 8,
+                    direction: "down",
+                    number: 4
+                },
+                {
+                    word: "SIRTUIN",
+                    clue: "NAD-dependent protein deacetylase family involved in metabolic regulation",
+                    row: 6,
+                    col: 4,
+                    direction: "across",
+                    number: 5
+                },
+                {
+                    word: "ATP",
+                    clue: "Energy currency of the cell produced in oxidative phosphorylation",
+                    row: 3,
+                    col: 11,
+                    direction: "down",
+                    number: 6
+                },
+                {
+                    word: "FOLATE",
+                    clue: "B-vitamin essential for one-carbon metabolism and DNA methylation",
+                    row: 8,
+                    col: 2,
+                    direction: "across",
+                    number: 7
+                },
+                {
+                    word: "SAM",
+                    clue: "S-adenosyl methionine, universal methyl donor",
+                    row: 5,
+                    col: 6,
+                    direction: "down",
+                    number: 8
+                },
+                {
+                    word: "KETONES",
+                    clue: "Alternative fuel source produced during fasting or low-carb diets",
+                    row: 10,
+                    col: 1,
+                    direction: "across",
+                    number: 9
+                },
+                {
+                    word: "DNMT",
+                    clue: "DNA methyltransferase enzyme family",
+                    row: 7,
+                    col: 9,
+                    direction: "down",
+                    number: 10
+                }
+            ];
+
+            const nutriCrossGrid = Array(15).fill().map(() => Array(15).fill(null));
+            const nutriCrossCellStates = {};
+
+            function nutriCrossInitializeGrid() {
+                nutriCrossWords.forEach(word => {
+                    const letters = word.word.split('');
+                    letters.forEach((letter, i) => {
+                        const row = word.direction === 'across' ? word.row : word.row + i;
+                        const col = word.direction === 'across' ? word.col + i : word.col;
+                        nutriCrossGrid[row][col] = {
+                            letter: letter,
+                            number: i === 0 ? word.number : null
+                        };
+                        nutriCrossCellStates[`${row}-${col}`] = letter;
+                    });
+                });
+            }
+
+            function nutriCrossRenderGrid() {
+                const gridElement = document.getElementById('nutri_cross_grid');
+                gridElement.innerHTML = '';
+                
+                for (let i = 0; i < 15; i++) {
+                    for (let j = 0; j < 15; j++) {
+                        const cell = document.createElement('div');
+                        cell.className = 'nutri_cross_cell';
+                        
+                        if (nutriCrossGrid[i][j]) {
+                            const input = document.createElement('input');
+                            input.maxLength = 1;
+                            input.dataset.row = i;
+                            input.dataset.col = j;
+                            cell.appendChild(input);
+                            
+                            if (nutriCrossGrid[i][j].number !== null) {
+                                const number = document.createElement('span');
+                                number.className = 'nutri_cross_number';
+                                number.textContent = nutriCrossGrid[i][j].number;
+                                cell.appendChild(number);
+                            }
+                        } else {
+                            cell.style.backgroundColor = '#333';
+                        }
+                        
+                        gridElement.appendChild(cell);
+                    }
+                }
+            }
+
+            function nutriCrossRenderClues() {
+                const acrossClues = nutriCrossWords.filter(w => w.direction === 'across')
+                    .map(w => `<p>${w.number}. ${w.clue}</p>`).join('');
+                const downClues = nutriCrossWords.filter(w => w.direction === 'down')
+                    .map(w => `<p>${w.number}. ${w.clue}</p>`).join('');
+                
+                document.getElementById('nutri_cross_across_clues').innerHTML = acrossClues;
+                document.getElementById('nutri_cross_down_clues').innerHTML = downClues;
+            }
+
+            window.nutriCrossCheckAnswers = function() {
+                const inputs = document.querySelectorAll('.nutri_cross_cell input');
+                let allCorrect = true;
+                
+                inputs.forEach(input => {
+                    const row = input.dataset.row;
+                    const col = input.dataset.col;
+                    const userAnswer = input.value.toUpperCase();
+                    const correctAnswer = nutriCrossCellStates[`${row}-${col}`];
+                    
+                    if (userAnswer === correctAnswer) {
+                        input.style.backgroundColor = '#90EE90';
+                    } else {
+                        input.style.backgroundColor = '#FFB6C1';
+                        allCorrect = false;
+                    }
+                });
+                
+                document.getElementById('nutri_cross_result').textContent = allCorrect ? 
+                    'Congratulations! All answers are correct!' : 
+                    'Some answers are incorrect. Keep trying!';
+            }
+
+            nutriCrossInitializeGrid();
+            nutriCrossRenderGrid();
+            nutriCrossRenderClues();
+        })();
+    </script>
 </div>
 
 <script>
@@ -1290,6 +1602,366 @@ functions, and safety concerns of onion (Allium cepa L.). Frontiers in Nutrition
           </div>
         </div>
       </div>
+      <head>  
+    <meta charset="UTF-8">  
+    <title>Site Feedback Poll</title>  
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>  
+    <style>  
+        /* All styles scoped to #feedbackPollWidget to prevent conflicts */  
+        #feedbackPollWidget {  
+            /* Container styles */  
+            width: 100%;  
+            max-width: 800px;  
+            margin: 20px auto;  
+            font-family: Arial, sans-serif;  
+        }  
+  
+        #feedbackPollWidget .poll-container {  
+            background: white;  
+            padding: 30px;  
+            border-radius: 10px;  
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);  
+            margin-bottom: 20px;  
+        }  
+  
+        #feedbackPollWidget .rating-group {  
+            display: flex;  
+            justify-content: space-between;  
+            margin: 20px 0;  
+            flex-wrap: wrap;  
+            gap: 10px;  
+        }  
+  
+        #feedbackPollWidget .rating-option {  
+            text-align: center;  
+            min-width: 40px;  
+        }  
+  
+        #feedbackPollWidget .rating-option input[type="radio"] {  
+            display: none;  
+        }  
+  
+        #feedbackPollWidget .rating-option label {  
+            display: block;  
+            padding: 10px;  
+            background: #f0f0f0;  
+            border-radius: 5px;  
+            cursor: pointer;  
+            transition: all 0.3s ease;  
+        }  
+  
+        #feedbackPollWidget .rating-option input[type="radio"]:checked + label {  
+            background: #4CAF50;  
+            color: white;  
+        }  
+  
+        #feedbackPollWidget .feedback-input {  
+            width: 100%;  
+            padding: 10px;  
+            margin: 10px 0;  
+            border: 1px solid #ddd;  
+            border-radius: 5px;  
+            resize: vertical;  
+            box-sizing: border-box;  
+        }  
+  
+        #feedbackPollWidget .submit-btn {  
+            background-color: #4CAF50;  
+            color: white;  
+            padding: 12px 20px;  
+            border: none;  
+            border-radius: 5px;  
+            cursor: pointer;  
+            font-size: 16px;  
+            width: 100%;  
+            margin-top: 10px;  
+        }  
+  
+        #feedbackPollWidget .submit-btn:hover {  
+            background-color: #45a049;  
+        }  
+  
+        #feedbackPollWidget .results {  
+            margin-top: 30px;  
+        }  
+  
+        #feedbackPollWidget .thank-you {  
+            display: none;  
+            text-align: center;  
+            color: #4CAF50;  
+            padding: 20px;  
+            background: #f0f8f0;  
+            border-radius: 5px;  
+            margin: 20px 0;  
+        }  
+  
+        #feedbackPollWidget #errorMessage {  
+            display: none;  
+            color: #f44336;  
+            margin: 10px 0;  
+            padding: 10px;  
+            background: #fee;  
+            border-radius: 5px;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <!-- Main container with unique ID -->  
+    <div id="feedbackPollWidget">  
+        <div class="poll-container">  
+            <h2>How likely are you to recommend my site?</h2>  
+            <form id="pollForm">  
+                <div class="rating-group">  
+                    <div class="rating-option">  
+                        <input type="radio" id="rating1" name="rating" value="1" required>  
+                        <label for="rating1">1</label>  
+                    </div>  
+                    <div class="rating-option">  
+                        <input type="radio" id="rating2" name="rating" value="2" required>  
+                        <label for="rating2">2</label>  
+                    </div>  
+                    <div class="rating-option">  
+                        <input type="radio" id="rating3" name="rating" value="3" required>  
+                        <label for="rating3">3</label>  
+                    </div>  
+                    <div class="rating-option">  
+                        <input type="radio" id="rating4" name="rating" value="4" required>  
+                        <label for="rating4">4</label>  
+                    </div>  
+                    <div class="rating-option">  
+                        <input type="radio" id="rating5" name="rating" value="5" required>  
+                        <label for="rating5">5</label>  
+                    </div>  
+                    <div class="rating-option">  
+                        <input type="radio" id="rating6" name="rating" value="6" required>  
+                        <label for="rating6">6</label>  
+                    </div>  
+                    <div class="rating-option">  
+                        <input type="radio" id="rating7" name="rating" value="7" required>  
+                        <label for="rating7">7</label>  
+                    </div>  
+                    <div class="rating-option">  
+                        <input type="radio" id="rating8" name="rating" value="8" required>  
+                        <label for="rating8">8</label>  
+                    </div>  
+                    <div class="rating-option">  
+                        <input type="radio" id="rating9" name="rating" value="9" required>  
+                        <label for="rating9">9</label>  
+                    </div>  
+                    <div class="rating-option">  
+                        <input type="radio" id="rating10" name="rating" value="10" required>  
+                        <label for="rating10">10</label>  
+                    </div>  
+                </div>  
+                <div id="errorMessage"></div>  
+                <textarea class="feedback-input" name="feedback" placeholder="Additional feedback (optional)" rows="4"></textarea>  
+                <button type="submit" class="submit-btn">Submit</button>  
+            </form>  
+            <div id="thankYou" class="thank-you">  
+                <h3>Thank you for your feedback!</h3>  
+            </div>  
+        </div>  
+        <div class="poll-container">  
+            <div class="results">  
+                <h3>Current Results</h3>  
+                <div id="resultsChart"></div>  
+            </div>  
+        </div>  
+    </div>  
+  
+    <script>  
+        // Ensure all JavaScript selectors are scoped to the widget  
+        document.getElementById('pollForm').addEventListener('submit', function(e) {  
+            e.preventDefault();  
+            const rating = document.querySelector('#feedbackPollWidget input[name="rating"]:checked');  
+            const feedback = document.querySelector('#feedbackPollWidget textarea[name="feedback"]').value;  
+              
+            if (!rating) {  
+                document.getElementById('errorMessage').style.display = 'block';  
+                document.getElementById('errorMessage').textContent = 'Please select a rating';  
+                return;  
+            }  
+          
+            fetch('/submit', {  
+                method: 'POST',  
+                headers: {  
+                    'Content-Type': 'application/json',  
+                },  
+                body: JSON.stringify({rating: rating.value, feedback: feedback})  
+            })  
+            .then(response => response.json())  
+            .then(data => {  
+                document.getElementById('pollForm').style.display = 'none';  
+                document.getElementById('thankYou').style.display = 'block';  
+                updateChart(data.chart_data);  
+            })  
+            .catch(error => {  
+                document.getElementById('errorMessage').style.display = 'block';  
+                document.getElementById('errorMessage').textContent = 'An error occurred. Please try again.';  
+            });  
+        });  
+  
+        function updateChart(chartData) {  
+            Plotly.newPlot('resultsChart', chartData);  
+        }  
+  
+        // Load initial results  
+        fetch('/results')  
+            .then(response => response.json())  
+            .then(data => {  
+                updateChart(data.chart_data);  
+            })  
+            .catch(error => {  
+                console.error('Error loading results:', error);  
+            }); 
+            from flask import Flask, render_template, request, jsonify  
+import pandas as pd  
+import json  
+import plotly.express as px  
+import plotly.utils  
+from datetime import datetime  
+import os  
+  
+app = Flask(__name__)  
+  
+DATA_FILE = 'poll_responses.json'  
+  
+def load_responses():  
+    if os.path.exists(DATA_FILE):  
+        with open(DATA_FILE, 'r') as f:  
+            return json.load(f)  
+    return []  
+  
+def save_response(rating, feedback):  
+    responses = load_responses()  
+    responses.append({  
+        'timestamp': datetime.now().isoformat(),  
+        'rating': rating,  
+        'feedback': feedback  
+    })  
+    with open(DATA_FILE, 'w') as f:  
+        json.dump(responses, f)  
+  
+def get_chart_data():  
+    responses = load_responses()  
+    if not responses:  
+        return [{'type': 'bar', 'x': [], 'y': []}]  
+      
+    df = pd.DataFrame(responses)  
+    rating_counts = df['rating'].value_counts().sort_index()  
+      
+    fig = px.bar(x=rating_counts.index, y=rating_counts.values,  
+                 labels={'x': 'Rating', 'y': 'Number of Responses'},  
+                 title='Rating Distribution')  
+      
+    return json.loads(json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder))  
+  
+@app.route('/')  
+def index():  
+    return render_template('poll_template.html')  
+  
+@app.route('/submit', methods=['POST'])  
+def submit():  
+    data = request.json  
+    save_response(int(data['rating']), data['feedback'])  
+    return jsonify({'status': 'success', 'chart_data': get_chart_data()})  
+  
+@app.route('/results')  
+def results():  
+    return jsonify({'chart_data': get_chart_data()})  
+  
+if __name__ == '__main__':  
+    app.run(debug=True, port=5000)
+      # app.py  
+from flask import Flask, jsonify, request, make_response  
+from flask_cors import CORS  
+from functools import wraps  
+import json  
+import os  
+  
+app = Flask(__name__)  
+CORS(app)  
+  
+# Set a simple admin username and password  
+ADMIN_USER = "admin"  
+ADMIN_PASS = "pollmaster123"  
+  
+# Create data file if it doesn't exist  
+if not os.path.exists('poll_responses.json'):  
+    with open('poll_responses.json', 'w') as f:  
+        json.dump({'responses': []}, f)  
+  
+# Authentication decorator  
+def requires_auth(f):  
+    @wraps(f)  
+    def decorated(*args, **kwargs):  
+        auth = request.authorization  
+        if not auth or not check_auth(auth.username, auth.password):  
+            return authenticate()  
+        return f(*args, **kwargs)  
+    return decorated  
+  
+def check_auth(username, password):  
+    return username == ADMIN_USER and password == ADMIN_PASS  
+  
+def authenticate():  
+    return make_response(  
+        'Could not verify your access level for that URL.\n'  
+        'You have to login with proper credentials', 401,  
+        {'WWW-Authenticate': 'Basic realm="Login Required"'})  
+  
+@app.route('/results', methods=['GET'])  
+@requires_auth  
+def get_results():  
+    try:  
+        with open('poll_responses.json', 'r') as f:  
+            data = json.load(f)  
+          
+        # Aggregate the ratings  
+        ratings = {}  
+        for response in data['responses']:  
+            rating = response.get('rating')  
+            if rating:  
+                ratings[rating] = ratings.get(rating, 0) + 1  
+          
+        # Format for plotting  
+        chart_data = {  
+            'data': [{  
+                'type': 'bar',  
+                'x': list(ratings.keys()),  
+                'y': list(ratings.values())  
+            }]  
+        }  
+          
+        return jsonify({'chart_data': chart_data, 'raw_data': data['responses']})  
+    except Exception as e:  
+        return jsonify({'error': str(e)}), 500  
+  
+@app.route('/submit', methods=['POST'])  
+def submit_response():  
+    try:  
+        response = request.get_json()  
+        with open('poll_responses.json', 'r') as f:  
+            data = json.load(f)  
+          
+        data['responses'].append({  
+            'rating': response.get('rating'),  
+            'feedback': response.get('feedback')  
+        })  
+          
+        with open('poll_responses.json', 'w') as f:  
+            json.dump(data, f, indent=2)  
+          
+        return jsonify({'status': 'success'})  
+    except Exception as e:  
+        return jsonify({'error': str(e)}), 500  
+  
+if __name__ == '__main__':  
+    print("Server starting on http://localhost:5000")  
+    print("Username: " + ADMIN_USER)  
+    print("Password: " + ADMIN_PASS)  
+    app.run(debug=True)  
+    </script>  
     </div>
   </div>
 </div>
